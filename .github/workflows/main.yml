@@ -16,9 +16,22 @@ jobs:
     steps:
       - name: dispatch workflow
         uses: actions/github-script@v5
+        continue-on-error: true
         with:
+          github-token: ${{ secrets.PAT }}
           script: |
             github.rest.actions.createWorkflowDispatch({
+              owner: 'averikitsch',
+              repo: 'cloud-run-microservice-template-java',
+              workflow_id: 13913302,
+              ref: 'main'
+            });
+      - name: dispatch workflow2
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.PAT }}
+          script: |
+            core.request('POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches', {
               owner: 'averikitsch',
               repo: 'cloud-run-microservice-template-java',
               workflow_id: 13913302,
