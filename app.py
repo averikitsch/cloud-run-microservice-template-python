@@ -52,7 +52,8 @@ if __name__ == "__main__":
     # handles Ctrl-C termination
     signal.signal(signal.SIGINT, shutdown_handler)
 
-    app.run(host="localhost", port=8080, debug=True)
+    app.run(host="localhost", 
+    port=8080, debug=True)
 else:
     # handles Cloud Run container termination
     signal.signal(signal.SIGTERM, shutdown_handler)
