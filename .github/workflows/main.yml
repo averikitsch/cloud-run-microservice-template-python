@@ -10,7 +10,7 @@ jobs:
   add-license:
     runs-on: ubuntu-latest
     env:
-      ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
     steps:
       - uses: actions/checkout@v2
         with:
