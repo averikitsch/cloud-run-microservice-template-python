@@ -26,8 +26,8 @@ app = Flask(__name__)
 @app.route("/")
 def hello() -> str:
     # Use basic logging with custom fields
-    logger.info(logField="custom-entry", 
-    arbitraryField="custom-entry")
+    logger.info(logField="custom-entry",
+                arbitraryField="custom-entry")
 
 # https://cloud.google.com/run/docs/logging#correlate-logs longggggggggggggggggggggggggggggggggggg name in the comments
     logger.info("Child logger with trace Id.")
